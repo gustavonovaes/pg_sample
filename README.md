@@ -92,15 +92,15 @@ __\--limit=__*limit*
         # include all rows from all tables in the forums schema
         --limit="forums.* = *"
 
-        # include 5% of total rows from each table in log schema
-        # and 50% to the rest of tables
-        --limit="log.* = 5%, * = 50%"
-
     The limit option may be specified multiple times. Multiple pattern/rule
     pairs can also be specified as a single comma-separated value. For example:
 
         # include all rows from the ads table; otherwise default to 300 rows
         --limit="ads=*,*=300"
+        
+        # include 5% of total rows from each table in log schema
+        # and 50% to the rest of tables
+        --limit="log.*=5%, *=50%"
 
     Rules are applied in order with the first match taking precedence.
 
